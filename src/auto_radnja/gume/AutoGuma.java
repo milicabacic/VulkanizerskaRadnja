@@ -103,7 +103,8 @@ public class AutoGuma {
 	 * @throws java.lang.IllegalArgumentException Ukoliko vrednost precnika nije u intervalu [13,22]
 	 */
 	public void setPrecnik(int precnik) {
-		if (precnik < 13 && precnik > 22)
+		//uslov za ospeg promenjen sa && na ||
+		if (precnik < 13 || precnik > 22)
 			throw new IllegalArgumentException("Precnik van opsega");
 		
 		this.precnik = precnik;
@@ -128,7 +129,8 @@ public class AutoGuma {
 	 * @throws java.lang.IllegalArgumentException Ukoliko prosledjena sirina gume nije u intervalu [135,355]
 	 */
 	public void setSirina(int sirina) {
-		if (sirina < 135 && sirina > 355)
+		//uveden logicki uslov || umesto &&
+		if (sirina < 135 || sirina > 355)
 			throw new IllegalArgumentException("Sirina van opsega");
 		
 		this.sirina = sirina;
